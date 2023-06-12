@@ -10,6 +10,12 @@ The `LinkedList` class is a simple implementation of a singly linked list data s
 - Checking if a value exists in the list
 - Converting the linked list into a string representation
 
+## Whiteboard Process
+
+---
+
+![Whiteboard](./LinkedList.png)
+
 ## Usage
 
 To use the LinkedList class in your JavaScript project, follow these steps:

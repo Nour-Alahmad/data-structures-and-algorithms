@@ -1,0 +1,16 @@
+{
+  "name": "challenge3",
+  "version": "1.0.0",
+  "description": "The `LinkedList` class is a simple implementation of a singly linked list data structure in JavaScript. It allows you to create and manipulate linked lists efficiently.",
+  "main": "LinkedList.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.5.0",
+    "supertest": "^6.3.3"
+  }
+}
