@@ -110,6 +110,35 @@ class LinkedList {
     return this.findNodeAtIndex(kFromHead);
   }
 
+  zipLists(list1, list2) {
+    const zippedList = new LinkedList();
+
+    let current1 = list1.head;
+    let current2 = list2.head;
+
+    while (current1 && current2) {
+      zippedList.append(current1.value);
+      current1 = current1.next;
+
+      zippedList.append(current2.value);
+      current2 = current2.next;
+    }
+
+    while (current1) {
+      zippedList.append(current1.value);
+      current1 = current1.next;
+    }
+
+    while (current2) {
+      zippedList.append(current2.value);
+      current2 = current2.next;
+    }
+
+    return zippedList;
+  }
+
+
+
   tostring() {
     let currentNode = this.head;
     let str = "";
@@ -131,6 +160,9 @@ newList.insert(5);
 
 const newList2 = new LinkedList();
 
+// const newList3 = zipLists(newList,newList2);
+
+
 newList2.append(1);
 newList2.append(2);
 newList2.append(3);
@@ -138,8 +170,13 @@ newList2.append(4);
 // newList2.append(5);
 
 console.log(newList2.tostring());
+console.log(newList.tostring());
+
 
 console.log(newList2.kthNodeFromTail(-1));
+const newList3 = newList.zipLists(newList,newList2);
+
+console.log(newList3.tostring());
 
 // console.log(newList2.tostring());
 
