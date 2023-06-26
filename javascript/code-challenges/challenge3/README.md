@@ -18,6 +18,11 @@ The `LinkedList` class is a simple implementation of a singly linked list data s
 
 ![Whiteboard](./LinkedList.png)
 
+### zipLists whiteboard
+
+![Whiteboard](./zipLists.png)
+
+
 ## Usage
 
 To use the LinkedList class in your JavaScript project, follow these steps:
