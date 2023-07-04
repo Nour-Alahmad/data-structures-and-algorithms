@@ -55,6 +55,7 @@ stack.push("5");
 
 console.log(`peek:${stack.peek()}, length:${stack.length}`);
 
+module.exports = Stack;
 // #-----------------------------------------------------------------------------------------
 
 describe("Stack", () => {
