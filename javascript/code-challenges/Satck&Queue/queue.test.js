@@ -61,70 +61,71 @@ class Queue {
 // queue.dequeue();
 
 // console.log(`Queue length after enqueuing : ${queue.length}`);// Output -
+module.exports = Queue;
 
 // #-----------------------------------------------------------------------------
-describe("Queue", () => {
-  let queue;
+// describe("Queue", () => {
+//   let queue;
 
-  beforeEach(() => {
-    queue = new Queue();
-  });
+//   beforeEach(() => {
+//     queue = new Queue();
+//   });
 
-  it("should enqueue into a queue", () => {
-    queue.enqueue(5);
-    expect(queue.isEmpty()).toBe(false);
-    expect(queue.length).toBe(1);
-  });
+//   it("should enqueue into a queue", () => {
+//     queue.enqueue(5);
+//     expect(queue.isEmpty()).toBe(false);
+//     expect(queue.length).toBe(1);
+//   });
 
-  it("should enqueue multiple values into a queue", () => {
-    queue.enqueue(5);
-    queue.enqueue(10);
-    queue.enqueue(15);
-    expect(queue.isEmpty()).toBe(false);
-    expect(queue.length).toBe(3);
-  });
+//   it("should enqueue multiple values into a queue", () => {
+//     queue.enqueue(5);
+//     queue.enqueue(10);
+//     queue.enqueue(15);
+//     expect(queue.isEmpty()).toBe(false);
+//     expect(queue.length).toBe(3);
+//   });
 
-  it("should dequeue out of a queue the expected value", () => {
-    queue.enqueue(5);
-    queue.enqueue(10);
-    const dequeuedValue = queue.dequeue();
-    expect(dequeuedValue).toBe(5);
-    expect(queue.isEmpty()).toBe(false);
-    expect(queue.length).toBe(1);
-  });
+//   it("should dequeue out of a queue the expected value", () => {
+//     queue.enqueue(5);
+//     queue.enqueue(10);
+//     const dequeuedValue = queue.dequeue();
+//     expect(dequeuedValue).toBe(5);
+//     expect(queue.isEmpty()).toBe(false);
+//     expect(queue.length).toBe(1);
+//   });
 
-  it("should peek into a queue, seeing the expected value", () => {
-    queue.enqueue(5);
-    queue.enqueue(10);
-    const peekedValue = queue.peek();
-    expect(peekedValue).toBe(5);
-    expect(queue.isEmpty()).toBe(false);
-    expect(queue.length).toBe(2);
-  });
+//   it("should peek into a queue, seeing the expected value", () => {
+//     queue.enqueue(5);
+//     queue.enqueue(10);
+//     const peekedValue = queue.peek();
+//     expect(peekedValue).toBe(5);
+//     expect(queue.isEmpty()).toBe(false);
+//     expect(queue.length).toBe(2);
+//   });
 
-  it("should empty a queue after multiple dequeues", () => {
-    queue.enqueue(5);
-    queue.enqueue(10);
-    queue.enqueue(15);
-    queue.dequeue();
-    queue.dequeue();
-    queue.dequeue();
-    expect(queue.isEmpty()).toBe(true);
-    expect(queue.length).toBe(0);
-  });
+//   it("should empty a queue after multiple dequeues", () => {
+//     queue.enqueue(5);
+//     queue.enqueue(10);
+//     queue.enqueue(15);
+//     queue.dequeue();
+//     queue.dequeue();
+//     queue.dequeue();
+//     expect(queue.isEmpty()).toBe(true);
+//     expect(queue.length).toBe(0);
+//   });
 
-  it("should instantiate an empty queue", () => {
-    expect(queue.isEmpty()).toBe(true);
-    expect(queue.length).toBe(0);
-  });
+//   it("should instantiate an empty queue", () => {
+//     expect(queue.isEmpty()).toBe(true);
+//     expect(queue.length).toBe(0);
+//   });
 
-  it("should raise an exception when calling dequeue on an empty queue", () => {
-    const result = queue.dequeue();
-    expect(result).toBe("empty");
-  });
+//   it("should raise an exception when calling dequeue on an empty queue", () => {
+//     const result = queue.dequeue();
+//     expect(result).toBe("empty");
+//   });
 
-  it("should raise an exception when calling peek on an empty queue", () => {
-    const result = queue.peek();
-    expect(result).toBe("empty");
-  });
-});
+//   it("should raise an exception when calling peek on an empty queue", () => {
+//     const result = queue.peek();
+//     expect(result).toBe("empty");
+//   });
+// });
