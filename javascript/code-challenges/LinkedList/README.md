@@ -22,6 +22,9 @@ The `LinkedList` class is a simple implementation of a singly linked list data s
 
 ![Whiteboard](./zipLists.png)
 
+### k-th value from the end
+
+![Whiteboard](./kthNode.png)
 
 ## Usage
 
