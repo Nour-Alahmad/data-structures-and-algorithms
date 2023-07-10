@@ -15,7 +15,7 @@ class Stack {
   }
 
   isEmpty() {
-    if(this.top === null) return true; else return false;;
+    if(this.top === null) return true; else return false;
   }
 
   push(value) {
