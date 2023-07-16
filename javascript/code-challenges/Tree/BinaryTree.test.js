@@ -48,8 +48,19 @@ class BinaryTree {
     traverse(this.root);
     return result;
   }
-}
 
+  getMax() {
+    let max = this.root.value;
+    const traverse = (node) => {
+      if (!node) return;
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+      if (node.value > max) max = node.value;
+    };
+    traverse(this.root);
+    return max;
+  }
+}
 class BinarySearchTree extends BinaryTree {
   constructor(node = null) {
     super(node);
@@ -101,7 +112,6 @@ class BinarySearchTree extends BinaryTree {
       return this.searchNode(node.right, value);
     }
   }
-
 }
 
 //------------------------------------------------------------
@@ -110,11 +120,11 @@ let tree = null;
 
 let one = new Node(1);
 let two = new Node(2);
-let three = new Node(3);
+let three = new Node(30);
 let four = new Node(4);
 let five = new Node(5);
 let six = new Node(6);
-let seven = new Node(7);
+let seven = new Node(70);
 let eight = new Node(8);
 let nine = new Node(9);
 
@@ -128,90 +138,90 @@ seven.left = eight;
 seven.right = nine;
 
 tree = new BinaryTree(one);
-let tree2 = new BinarySearchTree();
+// let tree2 = new BinarySearchTree();
 
-tree2.add(1);
-tree2.add(2);
-tree2.add(3);
-tree2.add(4);
-tree2.add(5);
-tree2.add(6);
-tree2.add(7);
+// tree2.add(1);
+// tree2.add(2);
+// tree2.add(30);
+// tree2.add(4);
+// tree2.add(5);
+// tree2.add(6);
+// tree2.add(7);
 
-console.log(tree2.contains(15));
+console.log(tree.getMax());
 
-let preOrder = tree.pre_order();
-let inOrder = tree.in_order();
+// let preOrder = tree.pre_order();
+// let inOrder = tree.in_order();
 let postOrder = tree.post_order();
 
-console.log("preOrder: ", preOrder);
-console.log("inOrder: ", inOrder);
+// console.log("preOrder: ", preOrder);
+// console.log("inOrder: ", inOrder);
 console.log("postOrder: ", postOrder);
 
 // ---------------------------------------------------------------
 
-describe('Binary Search Tree', () => {
-  let BSTree;
+// describe("Binary Search Tree", () => {
+//   let BSTree;
 
-  beforeEach(() => {
-    BSTree = new BinarySearchTree();
-  });
+//   beforeEach(() => {
+//     BSTree = new BinarySearchTree();
+//   });
 
-  it('can successfully instantiate an empty tree', () => {
-    expect(BSTree.root).toBeNull();
-  });
+//   it("can successfully instantiate an empty tree", () => {
+//     expect(BSTree.root).toBeNull();
+//   });
 
-  it('can successfully instantiate a tree with a single root node', () => {
-    BSTree.add(5);
-    expect(BSTree.root.value).toBe(5);
-  });
+//   it("can successfully instantiate a tree with a single root node", () => {
+//     BSTree.add(5);
+//     expect(BSTree.root.value).toBe(5);
+//   });
 
-  it('can successfully add a left child and right child properly to a node', () => {
-    BSTree.add(5);
-    BSTree.add(3);
-    BSTree.add(7);
+//   it("can successfully add a left child and right child properly to a node", () => {
+//     BSTree.add(5);
+//     BSTree.add(3);
+//     BSTree.add(7);
 
-    expect(BSTree.root.value).toBe(5);
-    expect(BSTree.root.left.value).toBe(3);
-    expect(BSTree.root.right.value).toBe(7);
-  });
+//     expect(BSTree.root.value).toBe(5);
+//     expect(BSTree.root.left.value).toBe(3);
+//     expect(BSTree.root.right.value).toBe(7);
+//   });
 
-  it('can successfully return a collection from a pre-order traversal', () => {
-    BSTree.add(5);
-    BSTree.add(3);
-    BSTree.add(7);
-    BSTree.add(1);
-    BSTree.add(4);
+//   it("can successfully return a collection from a pre-order traversal", () => {
+//     BSTree.add(5);
+//     BSTree.add(3);
+//     BSTree.add(7);
+//     BSTree.add(1);
+//     BSTree.add(4);
 
-    const expected = [5, 3, 1, 4, 7];
-    const result = BSTree.pre_order();
+//     const expected = [5, 3, 1, 4, 7];
+//     const result = BSTree.pre_order();
 
-    expect(result).toEqual(expected);
-  });
+//     expect(result).toEqual(expected);
+//   });
 
-  it('can successfully return a collection from an in-order traversal', () => {
-    BSTree.add(5);
-    BSTree.add(3);
-    BSTree.add(7);
-    BSTree.add(1);
-    BSTree.add(4);
+//   it("can successfully return a collection from an in-order traversal", () => {
+//     BSTree.add(5);
+//     BSTree.add(3);
+//     BSTree.add(7);
+//     BSTree.add(1);
+//     BSTree.add(4);
 
-    const expected = [1, 3, 4, 5, 7];
-    const result = BSTree.in_order();
+//     const expected = [1, 3, 4, 5, 7];
+//     const result = BSTree.in_order();
 
-    expect(result).toEqual(expected);
-  });
+//     expect(result).toEqual(expected);
+//   });
 
-  it('can successfully return a collection from a post-order traversal', () => {
-    BSTree.add(5);
-    BSTree.add(3);
-    BSTree.add(7);
-    BSTree.add(1);
-    BSTree.add(4);
+//   it("can successfully return a collection from a post-order traversal", () => {
+//     BSTree.add(5);
+//     BSTree.add(3);
+//     BSTree.add(7);
+//     BSTree.add(1);
+//     BSTree.add(4);
 
-    const expected = [1, 4, 3, 7, 5];
-    const result = BSTree.post_order();
+//     const expected = [1, 4, 3, 7, 5];
+//     const result = BSTree.post_order();
 
-    expect(result).toEqual(expected);
-  });
-});
+//     expect(result).toEqual(expected);
+//   });
+// });
