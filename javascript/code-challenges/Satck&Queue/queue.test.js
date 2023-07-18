@@ -33,7 +33,7 @@ class Queue {
     let temp = null;
     //if queue is empty then it will throw an error
     if (!this.isEmpty()) {
-      console.log("Dequeued item: " + this.front.value);
+    
       temp = this.front;
       this.front = temp.next;
       --this.length;
