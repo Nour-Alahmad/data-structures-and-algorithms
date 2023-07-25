@@ -1,4 +1,4 @@
-let Queue = require("../Satck&Queue/queue.test");
+let Queue = require('../Satck&Queue/queue.test');
 
 class Node {
   constructor(value) {
@@ -71,6 +71,7 @@ class BinaryTree {
     const result = [];
 
     queue.push(this.root);
+
     while (queue.length > 0) {
       const current = queue.shift();
       result.push(current.value);
@@ -86,62 +87,80 @@ class BinaryTree {
 
     return result;
   }
-
 }
-// class BinarySearchTree extends BinaryTree {
-//   constructor(node = null) {
-//     super(node);
-//     this.root = node;
-//   }
+class BinarySearchTree extends BinaryTree {
+  constructor(node = null) {
+    super(node);
+    this.root = node;
+  }
 
-//   add(value) {
-//     const newNode = new Node(value);
+  add(value) {
+    const newNode = new Node(value);
 
-//     if (this.root === null) {
-//       this.root = newNode;
-//     } else {
-//       this.insertNode(this.root, newNode);
-//     }
-//   }
+    if (this.root === null) {
+      this.root = newNode;
+    } else {
+      this.insertNode(this.root, newNode);
+    }
+  }
 
-//   insertNode(node, newNode) {
-//     if (newNode.value < node.value) {
-//       if (node.left === null) {
-//         node.left = newNode;
-//       } else {
-//         this.insertNode(node.left, newNode);
-//       }
-//     } else {
-//       if (node.right === null) {
-//         node.right = newNode;
-//       } else {
-//         this.insertNode(node.right, newNode);
-//       }
-//     }
-//   }
+  insertNode(node, newNode) {
+    if (newNode.value < node.value) {
+      if (node.left === null) {
+        node.left = newNode;
+      } else {
+        this.insertNode(node.left, newNode);
+      }
+    } else {
+      if (node.right === null) {
+        node.right = newNode;
+      } else {
+        this.insertNode(node.right, newNode);
+      }
+    }
+  }
 
-//   contains(value) {
-//     return this.searchNode(this.root, value);
-//   }
+  contains(value) {
+    return this.searchNode(this.root, value);
+  }
 
-//   searchNode(node, value) {
-//     if (node === null) {
-//       return false;
-//     }
+  searchNode(node, value) {
+    if (node === null) {
+      return false;
+    }
 
-//     if (value === node.value) {
-//       return true;
-//     }
+    if (value === node.value) {
+      return true;
+    }
 
-//     if (value < node.value) {
-//       return this.searchNode(node.left, value);
-//     } else {
-//       return this.searchNode(node.right, value);
-//     }
-//   }
-// }
+    if (value < node.value) {
+      return this.searchNode(node.left, value);
+    } else {
+      return this.searchNode(node.right, value);
+    }
+  }
 
-//------------------------------------------------------------
+  fizzBuzzTree() {
+    let newTree = new BinaryTree;
+
+    function traverse(node) {
+      if (!node) return;
+      if (node.value % 3 === 0 && node.value % 5 === 0) {
+        console.log('FizzBuzz');
+      } else if (node.value % 3 === 0) {
+        console.log('Fizz');
+      } else if (node.value % 5 === 0) {
+        console.log('Buzz');
+      } else {
+        console.log('else');
+      }
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+    }
+    traverse(this.root);
+    return result;
+  }
+}
 
 let tree = null;
 
@@ -175,18 +194,20 @@ tree = new BinaryTree(one);
 // tree2.add(6);
 // tree2.add(7);
 
-
 let b = tree.breadthFirst();
 
-console.log(b, "\n---------------------------------------------------------------");
+console.log(
+  b,
+  '\n---------------------------------------------------------------'
+);
 
 let preOrder = tree.pre_order();
 let inOrder = tree.in_order();
 let postOrder = tree.post_order();
 
-console.log("preOrder: ", preOrder);
-console.log("inOrder: ", inOrder);
-console.log("postOrder: ", postOrder);
+console.log('preOrder: ', preOrder);
+console.log('inOrder: ', inOrder);
+console.log('postOrder: ', postOrder);
 
 // ---------------------------------------------------------------
 
