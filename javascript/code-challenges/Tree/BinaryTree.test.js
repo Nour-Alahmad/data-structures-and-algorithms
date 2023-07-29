@@ -140,26 +140,7 @@ class BinarySearchTree extends BinaryTree {
     }
   }
 
-  fizzBuzzTree() {
-    let newTree = new BinaryTree;
-
-    function traverse(node) {
-      if (!node) return;
-      if (node.value % 3 === 0 && node.value % 5 === 0) {
-        console.log('FizzBuzz');
-      } else if (node.value % 3 === 0) {
-        console.log('Fizz');
-      } else if (node.value % 5 === 0) {
-        console.log('Buzz');
-      } else {
-        console.log('else');
-      }
-      if (node.left) traverse(node.left);
-      if (node.right) traverse(node.right);
-    }
-    traverse(this.root);
-    return result;
-  }
+ 
 }
 
 let tree = null;
