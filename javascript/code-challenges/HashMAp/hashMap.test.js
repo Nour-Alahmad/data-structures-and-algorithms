@@ -119,7 +119,11 @@ class HashMap {
     }
     return keys;
   }
+
+
 }
+
+module.exports = HashMap;
 
 //Test-------------------------------------------------------------
 
@@ -166,7 +170,7 @@ describe("Hashmap functionality tests", () => {
     hashmap.add("key7", "value8");
     hashmap.add("k7y", "value9");
 
-  
+
     expect(hashmap.get("key7")).toBe("value8");
     expect(hashmap.get("k7y")).toBe("value9");
   });
