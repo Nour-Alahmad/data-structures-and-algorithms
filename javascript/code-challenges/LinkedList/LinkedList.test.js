@@ -42,6 +42,9 @@ class LinkedList {
     this.tail.next = null;
     // console.log(this);
   }
+
+
+  
   insertBefore(value, newValue) {
     let currentNode = this.head;
     if (currentNode.value === value || currentNode === null) {
