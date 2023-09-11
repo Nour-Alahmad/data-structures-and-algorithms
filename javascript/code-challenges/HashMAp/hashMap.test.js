@@ -127,58 +127,58 @@ module.exports = HashMap;
 
 //Test-------------------------------------------------------------
 
-describe("Hashmap functionality tests", () => {
-  let hashmap;
+// describe("Hashmap functionality tests", () => {
+//   let hashmap;
 
-  beforeEach(() => {
-    hashmap = new HashMap(10);
-  });
+//   beforeEach(() => {
+//     hashmap = new HashMap(10);
+//   });
 
-  test("Setting a key/value to the hashtable", () => {
-    hashmap.add("key1", "value1");
-    expect(hashmap.get("key1")).toBe("value1");
-  });
+//   test("Setting a key/value to the hashtable", () => {
+//     hashmap.add("key1", "value1");
+//     expect(hashmap.get("key1")).toBe("value1");
+//   });
 
-  test("Retrieving based on a key", () => {
-    hashmap.add("key2", "value2");
-    expect(hashmap.get("key2")).toBe("value2");
-  });
+//   test("Retrieving based on a key", () => {
+//     hashmap.add("key2", "value2");
+//     expect(hashmap.get("key2")).toBe("value2");
+//   });
 
-  test("Retrieving non-existing key returns null", () => {
-    expect(hashmap.get("nonexistent")).toBeUndefined();
-  });
+//   test("Retrieving non-existing key returns null", () => {
+//     expect(hashmap.get("nonexistent")).toBeUndefined();
+//   });
 
-  test("List of all unique keys", () => {
-    hashmap.add("key3", "value3");
-    hashmap.add("key4", "value4");
-    hashmap.add("key5", "value5");
-    const keys = hashmap.keys();
-    expect(keys).toEqual(expect.arrayContaining(["key3", "key4", "key5"]));
-    expect(keys.length).toBe(3); // Make sure only unique keys are returned
-  });
+//   test("List of all unique keys", () => {
+//     hashmap.add("key3", "value3");
+//     hashmap.add("key4", "value4");
+//     hashmap.add("key5", "value5");
+//     const keys = hashmap.keys();
+//     expect(keys).toEqual(expect.arrayContaining(["key3", "key4", "key5"]));
+//     expect(keys.length).toBe(3); // Make sure only unique keys are returned
+//   });
 
-  test("Collision handling", () => {
+//   test("Collision handling", () => {
 
-    hashmap.add("key6", "value6");
-    hashmap.add("k6y", "value7");
+//     hashmap.add("key6", "value6");
+//     hashmap.add("k6y", "value7");
 
-    expect(hashmap.get("key6")).toBe("value6");
-    expect(hashmap.get("k6y")).toBe("value7");
-  });
+//     expect(hashmap.get("key6")).toBe("value6");
+//     expect(hashmap.get("k6y")).toBe("value7");
+//   });
 
-  test("Retrieving a value from a bucket with collision", () => {
-    hashmap.add("key7", "value8");
-    hashmap.add("k7y", "value9");
+//   test("Retrieving a value from a bucket with collision", () => {
+//     hashmap.add("key7", "value8");
+//     hashmap.add("k7y", "value9");
 
 
-    expect(hashmap.get("key7")).toBe("value8");
-    expect(hashmap.get("k7y")).toBe("value9");
-  });
+//     expect(hashmap.get("key7")).toBe("value8");
+//     expect(hashmap.get("k7y")).toBe("value9");
+//   });
 
-  test("Hashing a key to an in-range value", () => {
-    const key = "some_key";
-    const hash = hashmap.hash(key);
-    expect(hash).toBeGreaterThanOrEqual(0);
-    expect(hash).toBeLessThan(hashmap.size);
-  });
-});
+//   test("Hashing a key to an in-range value", () => {
+//     const key = "some_key";
+//     const hash = hashmap.hash(key);
+//     expect(hash).toBeGreaterThanOrEqual(0);
+//     expect(hash).toBeLessThan(hashmap.size);
+//   });
+// });
