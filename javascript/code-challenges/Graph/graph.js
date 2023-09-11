@@ -11,8 +11,6 @@ class Vertex {
   }
 }
 
-
-
 class Graph {
   constructor() {
     this.adjacencyList = new Map();
@@ -48,7 +46,30 @@ class Graph {
   size() {
     return this.adjacencyList.size;
   }
+
+  
+  
+  breadthFirst(startNode) {
+    const visited = new Set();
+    const result = [];
+    const nodesarrayList = [startNode];
+
+    visited.add(startNode);
+
+    while (nodesarrayList.length > 0) {
+      const currentNode = nodesarrayList.shift();
+      result.push(currentNode);
+
+      for (const neighbor of this.adjacencyList.get(currentNode)) {
+        if (!visited.has(neighbor.vertex)) {
+          visited.add(neighbor.vertex);
+          nodesarrayList.push(neighbor.vertex);
+        }
+      }
+    }
+
+    return result;
+  }
 }
-
-
-
+=======
+}
