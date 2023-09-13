@@ -47,6 +47,8 @@ class Graph {
     return this.adjacencyList.size;
   }
 
+  
+  
   breadthFirst(startNode) {
     const visited = new Set();
     const result = [];
@@ -90,5 +92,8 @@ function businessTrip(graph, cities) {
   }
 
   return cost;
+}
+
+
 }
 
