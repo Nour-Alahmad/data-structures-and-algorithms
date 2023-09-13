@@ -8,17 +8,14 @@ function leftJoin(leftHashMap, rightHashMap) {
   return result;
 }
 
-const HashMap = require('./hashMap.test.js');
-
+const HashMap = require("./hashMap.test.js");
 
 function isUnique(str) {
-  
-  const newStr = str.toLowerCase().replace(/\s/g, '');
+  const newStr = str.toLowerCase().replace(/\s/g, "");
 
   const hashMap = new HashMap();
 
   for (const char of newStr) {
-
     if (hashMap.has(char)) {
       return false;
     }
@@ -27,4 +24,3 @@ function isUnique(str) {
   }
   return true;
 }
-
